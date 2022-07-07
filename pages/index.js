@@ -49,13 +49,11 @@ export default function Home() {
 				{
 					method: "GET",
 					headers: {
-						"X-RapidAPI-Key":
-							"d89482e913msh2d2b5477d280e4fp1994f6jsn1f97e3a851f0",
-						"X-RapidAPI-Host": "streaming-availability.p.rapidapi.com",
+						"X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPIKEY,
+						"X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPIDAPIHOST,
 					},
 				}
 			)
-			//TODO remove api keys, add .env
 			if (!response.ok)
 				throw new Error(response.status + " - " + response.statusText)
 			const data = await response.json()
@@ -94,7 +92,6 @@ export default function Home() {
 		}, 400)
 	}
 	async function addToWatchlist(e, data) {
-		//TODO stop duplicates
 		e.preventDefault()
 		try {
 			const response = await fetch(
