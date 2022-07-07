@@ -49,8 +49,10 @@ export default function Home() {
 				{
 					method: "GET",
 					headers: {
-						"X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPIKEY,
-						"X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPIDAPIHOST,
+						"X-RapidAPI-Key":
+							process.env.NEXT_PUBLIC_RAPIDAPIKEY || process.env.RAPIDAPIKEY,
+						"X-RapidAPI-Host":
+							process.env.NEXT_PUBLIC_RAPIDAPIHOST || process.env.RAPIDAPIHOST,
 					},
 				}
 			)
