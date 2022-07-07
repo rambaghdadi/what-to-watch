@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import { Minus, Plus } from "tabler-icons-react"
 import { useRouter } from "next/router"
+import { useAuth } from "../../context/authContext"
 
 const streamingServices = {
 	netflix: {
@@ -33,16 +34,42 @@ const streamingServices = {
 
 const Card = React.forwardRef((props, ref) => {
 	const router = useRouter()
-	const [user, setUser] = useState(null)
 	const [expandDetails, setExpandDetails] = useState(false)
+	// const [watchlist, setWatchlist] = useState([])
+	const { userToken } = useAuth()
 
 	const streamingInfo = props.streamingInfo
 	const streamingInfoArray = Object.keys(streamingInfo)
 
-	useEffect(() => {
-		const token = localStorage.getItem("token")
-		if (token) setUser(token)
-	}, [])
+	// useEffect(() => {
+	// 	if (router.asPath === "/") getWatchlist()
+	// }, [])
+
+	// async function getWatchlist() {
+	// 	try {
+	// 		const response = await fetch(
+	// 			`https://node-what-to-watch.herokuapp.com/api/watchlist`,
+	// 			{
+	// 				headers: {
+	// 					Authorization: `Bearer ${userToken}`,
+	// 				},
+	// 			}
+	// 		)
+	// 		if (!response.ok) throw new Error("Error")
+	// 		const data = await response.json()
+	// 		setWatchlist(data.items)
+	// 	} catch (error) {
+	// 		console.error(error)
+	// 	}
+	// }
+
+	// function alreadyInWatchlist(name) {
+	// 	// console.log(watchlist)
+	// 	for (let x of watchlist) {
+	// 		if (x.title === name) return true
+	// 	}
+	// 	return false
+	// }
 
 	return (
 		<div ref={ref} className={classes.card}>
@@ -118,7 +145,7 @@ const Card = React.forwardRef((props, ref) => {
 							)
 						})}
 					</div>
-					{user ? (
+					{userToken ? (
 						<div>
 							<button
 								onClick={props.onAddWatchlist}
@@ -144,4 +171,4 @@ const Card = React.forwardRef((props, ref) => {
 Card.displayName = "Card"
 export default Card
 
-//TODO if in watchlist already, remove
+//TODO if in watchlist already, remove (check how ashi would do this)

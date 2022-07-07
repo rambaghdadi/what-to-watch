@@ -13,6 +13,7 @@ import { useAuth } from "../context/authContext"
 
 export default function Home() {
 	const [initial, setInitial] = useState(true)
+	const [watchlist, setWatchlist] = useState(null)
 	const [drawer, setDrawer] = useState(false)
 	const [page, setPage] = useState(1)
 	const [maxPages, setMaxPages] = useState(0)
