@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	height: 100%;
+	min-height: 100% !important;
+}
+
+body {
+	--background-color: #1c1c1c;
+	--font-color: rgb(255, 255, 255);
+	min-height: 100%;
+	height: 100%;
+}
+
+html,
+body {
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: -0.5px;
+	background: var(--background-color);
+	background-repeat: no-repeat;
+	color: var(--font-color);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.home {
+	position: relative;
+}
+
+#results h1 {
+	margin-top: 5rem;
+	padding: 2rem;
+	font-size: 3rem;
+}
+
+/* Pages */
+.signup,
+.signin {
+	max-width: 70rem;
+	margin: 0 auto;
+	margin-top: 15rem;
+	height: calc(100vh - 15rem);
+}
+
+.signup h1,
+.signin h1 {
+	font-size: 3rem;
+	margin-bottom: 5rem;
+}
+
+.signup form,
+.signin form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+/* Mantine pls */
+
+.mantine-Select-input,
+.mantine-Chips-label,
+.mantine-SegmentedControl-root {
+	background-color: rgb(55, 55, 55);
+	color: var(--font-color);
+}
+
+.mantine-TextInput-label,
+.mantine-PasswordInput-label {
+	color: var(--font-color);
+}
+
+.mantine-Drawer-drawer {
+	background-color: var(--background-color);
+	color: var(--font-color);
+}
+
+.__mantine-ref-label.mantine-Chips-label.mantine-Chips-checked.__mantine-ref-filled.mantine-Chips-filled.mantine-9cwrj2 {
+	background-color: rgb(109, 109, 109);
+}
+
+.mantine-Select-label {
+	color: var(--font-color);
+}
+
+.__mantine-ref-label.mantine-o36ra8.mantine-SegmentedControl-label {
+	color: var(--font-color);
+}

@@ -1,0 +1,39 @@
+.form {
+	margin: 2rem 0;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	justify-content: center;
+	width: 100%;
+}
+
+.firstSection {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.genreSelect {
+	flex: 1 0 auto;
+	font-size: 1.6rem;
+}
+
+.genreSelect input,
+.genreSelect input[type="text"] {
+	font-size: 1.6rem;
+}
+
+@media (min-width: 650px) {
+	.main {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.chips {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
