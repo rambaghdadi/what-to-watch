@@ -9,11 +9,11 @@ export default function Signup(props) {
 	const router = useRouter()
 	const email = useRef()
 	const password = useRef()
-	const { userToken, setUserToken } = useAuth()
+	const { userToken, signin } = useAuth()
 
-	useEffect(() => {
-		if (userToken) router.replace("/")
-	}, [])
+	// useEffect(() => {
+	// 	if (userToken) router.replace("/")
+	// }, [])
 
 	async function formHandler(e) {
 		e.preventDefault()
@@ -33,9 +33,7 @@ export default function Signup(props) {
 				}
 			)
 			const data = await response.json()
-			localStorage.setItem("token", data.token)
-			localStorage.setItem("userId", data.userId)
-			setUserToken(data.token)
+			signin(data.token, data.userId)
 		} catch (error) {
 			console.error(error)
 		} finally {

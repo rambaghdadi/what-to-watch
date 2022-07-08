@@ -5,16 +5,7 @@ import { useAuth } from "../../context/authContext"
 
 export default function Header(props) {
 	const router = useRouter()
-	const { userToken, setUserToken } = useAuth()
-
-	function signout() {
-		setUserToken(false)
-		localStorage.removeItem("token")
-		localStorage.removeItem("userId")
-		setTimeout(() => {
-			router.push("/signin")
-		}, 100)
-	}
+	const { userToken, signout } = useAuth()
 
 	return (
 		<div
@@ -52,8 +43,3 @@ export default function Header(props) {
 		</div>
 	)
 }
-
-//TODO sign in icon for "add to list"
-//TODO search icon for "movie/series search"
-
-//TODO ask ashi why this isn't refreshing

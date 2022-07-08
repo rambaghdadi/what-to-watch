@@ -11,10 +11,11 @@ export default function Watchlist(props) {
 	const [loading, setLoading] = useState(false)
 	const [notification, setNotification] = useState(false)
 	const { userToken } = useAuth()
+
 	useEffect(() => {
 		console.log(userToken)
 		getWatchlist()
-	}, [])
+	}, [userToken])
 
 	async function getWatchlist() {
 		try {
