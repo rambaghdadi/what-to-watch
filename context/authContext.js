@@ -20,7 +20,7 @@ export default function AuthContextProvider(props) {
 
 	function signin(token, userId) {
 		localStorage.setItem("token", token)
-		localStorage.setItem("token", userId)
+		localStorage.setItem("userId", userId)
 		setUserToken(token)
 	}
 
